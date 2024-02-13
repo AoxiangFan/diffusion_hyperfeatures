@@ -1,8 +1,10 @@
-weights_path: "weights/aggregation_network.pt"
-diffusion_mode: "inversion"
+# weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/r0w09pix_sdv1-5_50-step_dim-4/checkpoint_step_4000.pt"
+
+weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/12zu9vsq_sdv1-5_50-step_dim-8/checkpoint_step_4000.pt"
+
+# weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/cgtn90m3_sdv1-5_50-step_dim-32/checkpoint_step_4000.pt"
+
+# weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/weights/aggregation_network.pt"
+
 output_resolution: 64
 batch_size: 2
-prompt: ""
-negative_prompt: ""
-guidance_scale: -1
-flip_timesteps: False

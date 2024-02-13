@@ -1,0 +1,7 @@
+weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/iscz5jec_sdv1-5_1-step_dim-8-256/checkpoint_step_4000.pt"
+
+# weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/12zu9vsq_sdv1-5_50-step_dim-8/checkpoint_step_4000.pt"
+
+load_resolution: 512
+batch_size: 4
+

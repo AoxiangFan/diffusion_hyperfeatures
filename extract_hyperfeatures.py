@@ -16,8 +16,15 @@ from archs.correspondence_utils import process_image
 def load_models(config_path, device="cuda"):
     config = OmegaConf.load(config_path)
     config = OmegaConf.to_container(config, resolve=True)
+
+    config0 = config.copy()
+
     weights = torch.load(config["weights_path"], map_location="cpu")
     config.update(weights["config"])
+
+    config.update(config0)
+    print(config)
+    
     if config.get("flip_timesteps", False):
         config["save_timestep"] = config["save_timestep"][::-1]
 
@@ -27,6 +34,7 @@ def load_models(config_path, device="cuda"):
     dims = collect_dims(diffusion_extractor.unet, idxs=diffusion_extractor.idxs)
     aggregation_network = AggregationNetwork(
         projection_dim=config["projection_dim"],
+        num_norm_groups=config["num_norm_groups"],
         feature_dims=dims,
         device=device,
         save_timestep=config["save_timestep"],

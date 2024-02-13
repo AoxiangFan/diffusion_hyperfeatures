@@ -172,6 +172,7 @@ def load_models(config_path):
         config["save_timestep"] = config["save_timestep"][::-1]
     aggregation_network = AggregationNetwork(
             projection_dim=config["projection_dim"],
+            num_norm_groups=config["num_norm_groups"],
             feature_dims=dims,
             device=device,
             save_timestep=config["save_timestep"],
@@ -181,7 +182,10 @@ def load_models(config_path):
 
 def main(args):
     config, diffusion_extractor, aggregation_network = load_models(args.config_path)
-    wandb.init(project=config["wandb_project"], name=config["wandb_run"])
+
+    # wandb.init(project=config["wandb_project"], name=config["wandb_run"])
+    wandb.init(project=config["wandb_project"], name=config["wandb_run"], mode=config["wandb_mode"])
+
     wandb.run.name = f"{str(wandb.run.id)}_{wandb.run.name}"
     parameter_groups = [
         {"params": aggregation_network.mixing_weights, "lr": config["lr"]},

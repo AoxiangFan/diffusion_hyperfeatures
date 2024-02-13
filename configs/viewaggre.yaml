@@ -1,0 +1,4 @@
+weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/cgtn90m3_sdv1-5_50-step_dim-32/checkpoint_step_4000.pt"
+
+load_resolution: 512
+batch_size: 10
