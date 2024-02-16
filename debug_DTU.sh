@@ -1,0 +1,1 @@
+python3 -m debugpy --listen 1265 --wait-for-client train_hyperfeatures_DTU.py --config_path configs/train_DTU.yaml
