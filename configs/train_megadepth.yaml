@@ -1,15 +1,14 @@
 # ======== Customize Paths =======
-wandb_run: sdv1-5_50-step_dim-32-128-DTU
+wandb_run: sdv1-5_50-step_dim-32-128-megadepth
 wandb_project: dhf
-wandb_mode: disabled
+wandb_mode: online
 results_folder: experiments
 # ======== Data / Logging ========
-dataset: dtu_yao
-train_path: /scratch/cvlab/datasets/dataset_afan/VolRecon/DTU_training
-test_path: /scratch/cvlab/datasets/dataset_afan/VolRecon/DTU_training
-train_list: /scratch/cvlab/home/afan/projects/2DImageTransform/lists/dtu/train.txt
-test_list: /scratch/cvlab/home/afan/projects/2DImageTransform/lists/dtu/val.txt
-n_views: 2
+dataset: megadepth
+train_path: /scratch/cvlab/datasets/dataset_DISK
+megadepth_batch_size: 1
+train_scene_limit: 1000
+test_scene_limit: 250
 n_pixel_sample: 15
 flip_timesteps: False
 # ======= Ours (All Steps) =======
@@ -21,7 +20,7 @@ num_timesteps: 50
 # ======= Training Hparams =======
 weight_decay: 0
 max_epochs: 1
-max_steps_per_epoch: 20000
+max_steps_per_epoch: 50000
 val_every_n_steps: 100
 plot_every_n_steps: -1
 lr: 1e-3
