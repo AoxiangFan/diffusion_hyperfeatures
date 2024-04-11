@@ -1,5 +1,5 @@
 # ======== Customize Paths =======
-wandb_run: sdv1-5_1-step_dim-8-256-DTU
+wandb_run: sdv1-5_50-step_dim-32-128-DTU
 wandb_project: dhf
 wandb_mode: online
 results_folder: experiments
@@ -13,11 +13,11 @@ n_views: 2
 n_pixel_sample: 15
 flip_timesteps: False
 # ======= Ours (All Steps) =======
-# save_timestep: [49, 45, 40, 35, 30, 25, 20, 15, 10, 5, 0]
-# num_timesteps: 50
+save_timestep: [49, 45, 40, 35, 30, 25, 20, 15, 10, 5, 0]
+num_timesteps: 50
 # ======== Ours - One-Step =======
-save_timestep: [0]
-num_timesteps: 1
+# save_timestep: [0]
+# num_timesteps: 1
 # ======= Training Hparams =======
 weight_decay: 0
 max_epochs: 1
@@ -26,14 +26,14 @@ val_every_n_steps: 100
 plot_every_n_steps: -1
 lr: 1e-3
 # ======== Model Hparams =========
-projection_dim: 8
-num_norm_groups: 1
+projection_dim: 32
+num_norm_groups: 4
 # ============== SDv1-5 ==========
 model_id: runwayml/stable-diffusion-v1-5
 # ============== SDv2-1 ==========
 # model_id: stabilityai/stable-diffusion-2-1-base
 diffusion_mode: inversion
-output_resolution: 256
+output_resolution: 128
 load_resolution: 512
 batch_size: 2
 prompt: ""
