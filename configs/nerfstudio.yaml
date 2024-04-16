@@ -1,5 +1,8 @@
 # weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/my10h72w_sdv1-5_50-step_dim-32-128/checkpoint_step_4000.pt"
-weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/y4ortpmq_sdv1-5_50-step_dim-32-128-DTU/checkpoint_step_5000.pt"
+# weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/y4ortpmq_sdv1-5_50-step_dim-32-128-DTU/checkpoint_step_5000.pt"
+# weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/7i8z1lo4_sdv1-5_50-step_dim-32-128-megadepth/checkpoint_step_50000.pt"
+# weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/tyd4ohwl_sdv1-5_50-step_dim-64-128-megadepth/checkpoint_step_46200.pt"
+weights_path: "/scratch/cvlab/home/afan/projects/diffusion_hyperfeatures/experiments/5vhn2st9_sdv1-5_50-step_dim-64-128-50-megadepth/checkpoint_step_40000.pt"
 
 load_resolution: 512
 batch_size: 5

@@ -22,7 +22,7 @@ num_timesteps: 50
 weight_decay: 0
 max_epochs: 1
 max_steps_per_epoch: 20000
-val_every_n_steps: 100
+val_every_n_steps: 1000
 plot_every_n_steps: -1
 lr: 1e-3
 # ======== Model Hparams =========

@@ -126,8 +126,12 @@ def train(config, diffusion_extractor, aggregation_network, optimizer, TrainImgL
 
             step = epoch * config["max_steps_per_epoch"] + i
             optimizer.zero_grad()
+
             # load_size and output_size are assumed to be in the order (w, h)
             source_points, target_points, imgs = process_batch_megadepth(sample, load_size, output_size, grid_samples, config["n_pixel_sample"], device)
+            if source_points is None:
+                continue
+
             img1_hyperfeats, img2_hyperfeats = get_hyperfeats(diffusion_extractor, aggregation_network, imgs)
             loss = compute_clip_loss(aggregation_network, img1_hyperfeats, img2_hyperfeats, source_points, target_points, output_size)
             loss.backward()
@@ -156,6 +160,10 @@ def process_batch_megadepth(data, load_size, output_size, grid_samples, num_samp
     flag = sanity_check(grid_samples, reprojections, image_0, image_1)
     pts_0 = grid_samples[:, flag]
     pts_1 = reprojections[:, flag]
+
+    if pts_0.shape[1] < num_sample:
+        return None, None, bitmaps[0, 0:2].to(device)
+    
     sample = np.random.choice(range(pts_0.shape[1]), num_sample)
     pixel_sample = pts_0[:, sample]
     pixel_sample_prime = pts_1[:, sample]
